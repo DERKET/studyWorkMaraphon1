@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+	background-image: url('https://s1.1zoom.ru/big0/903/Mitsubishi_2015_Lancer_442501.jpg');
+	backdrop-filter: blur(8px);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+ }
+
+.container{
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+}
+
+.slide{
+    height: 80vh;
+    border-radius: 10px;
+    margin: 10px;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 750ms ease-in-out;
+}
+
+.slide h3{
+    color: #cad5e2;
+    text-shadow: rgb(1, 20, 44) 1px 1px 0, rgb(1, 20, 44) 2px 2px 0, 
+                 rgb(1, 20, 44) 3px 3px 0, rgb(1, 20, 44) 4px 4px 0, 
+                 rgb(1, 20, 44) 5px 5px 0;
+    position: absolute;
+    font-size: 200px;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.slide.active{
+    flex: 10;
+}
+
+.slide.active h3{
+    opacity: 1;
+    font-size: 60px;
+    text-shadow: rgb(1, 20, 44) 0 0 0, rgb(1, 20, 44) 0px 0px 0, 
+                 rgb(1, 20, 44) 1px 1px 0, rgb(1, 20, 44) 1px 1px 0, 
+                 rgb(1, 20, 44) 1px 1px 0;
+    transition: opacity 0.5s ease-in-out, font-size 1s ease, text-shadow 0.5s ease-in;
+}
+
+.box {
+    padding: 15px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    margin: 0;
+    opacity: 0;
+    border-radius: 30px;
+    display: block;
+    /* width: 20px; */
+    /* height: 20px; */
+    background-color: #fff;
+    transition: width 1s, height 1s, background-color 1s, transform 1s;
+}
+
+.slide.active .box{
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.3s;
+    background-color: rgb(1, 20, 44);
+    width: 300px;
+    min-height: 420px;
+}
+
+/* .box:hover {
+    background-color: rgb(1, 20, 44);
+    width: 300px;
+    height: 500px;
+} */
+
+.info{
+    pointer-events: none;
+    color: white;
+    opacity: 0;    
+}
+
+/* .box:hover .info{
+    opacity: 1;
+    transition: opacity 2s ease-in-out 2s
+} */
+.slide.active .box .info{
+	opacity: 1;
+	transition: opacity 2s ease-in-out
+}
